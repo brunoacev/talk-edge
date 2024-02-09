@@ -15,14 +15,16 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const session = await getSession();
 
-  if (!session) {
+  if (!session) redirect("/login-account");
+
+  if (!!session) {
     return (
-      <html lang="pt-br">
+      <html lang="en">
         <body
           className={`${nunito.className} scroll-smooth antialiased w-full h-screen p-2 flex flex-col bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-50`}
         >
@@ -39,8 +41,6 @@ export default async function RootLayout({
       </html>
     );
   }
-
-  if (!!session) redirect("/workspace");
 
   return null;
 }

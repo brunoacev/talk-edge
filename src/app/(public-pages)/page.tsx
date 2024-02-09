@@ -1,11 +1,22 @@
-import { getSession } from "@/lib/session";
+import Link from "next/link";
 
 export default async function Home() {
-  const session = await getSession();
   return (
-    <main className="flex flex-col items-center justify-center h-full">
-      <h1>Clean Page!</h1>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
+    <main className="flex flex-col items-center justify-center gap-2 h-full">
+      <h1 className="font-semibold tracking-wide text-xl text-center">
+        Projeto para Meireles e Freitas Digital
+      </h1>
+
+      <div className=" flex items-center gap-1 flex-wrap">
+        <span> Mais sobre o desenvolvedor, acesse:</span>
+        <Link
+          href={"https://brunoacev-dev.vercel.app/"}
+          target="_blank"
+          className="underline hover:cursor-pointer"
+        >
+          brunoacev.com
+        </Link>
+      </div>
     </main>
   );
 }
