@@ -10,7 +10,7 @@ interface Navigation {
 export const Navigation = ({ urlLinks, orientation }: Navigation) => {
   return (
     <nav
-      className={cn("w-full h-full bg-zinc-50 dark:bg-zinc-900/50", {
+      className={cn("w-full h-fit bg-zinc-50 dark:bg-zinc-900/50", {
         ["flex items-center  justify-between px-4 py-3"]:
           orientation === "topbar",
         [""]: orientation === "sidebar",
@@ -47,7 +47,7 @@ export const Navigation = ({ urlLinks, orientation }: Navigation) => {
             </Link>
           </li>
         ))}
-        {orientation === "topbar" && <ToggleTheme />}
+        {/* {orientation === "topbar" && <ToggleTheme />} */}
       </ol>
     </nav>
   );
