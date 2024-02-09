@@ -1,59 +1,45 @@
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ToggleTheme } from "../toggle-theme";
+import { cn } from "@/lib/utils";
 import { getSession } from "@/lib/session";
-
+import { ToggleMenu } from "./toggle-menu";
+import { UrlLinks } from "./data/links";
+import { ToggleTheme } from "../toggle-theme";
 import { LogoutButton } from "../base-ui/logout-button";
 
-interface Navigation {
-  urlLinks: string[];
+type Navigation = {
   orientation: "topbar" | "sidebar";
-}
+};
 
-export const Navigation = async ({ urlLinks, orientation }: Navigation) => {
+export const Navigation = async ({ orientation }: Navigation) => {
   const session = await getSession();
 
   return (
-    <nav
-      className={cn("w-full h-fit bg-zinc-50 dark:bg-zinc-900/50", {
-        ["flex items-center  justify-between px-4 py-3"]:
-          orientation === "topbar",
-        [""]: orientation === "sidebar",
-      })}
-    >
-      <div>
-        <Link
-          href={"/"}
-          className={cn("", {
-            ["flex items-center gap-2"]: orientation === "topbar",
-            [""]: orientation === "sidebar",
-          })}
-        >
-          <span className="bg-blue-500/80 font-semibold text-zinc-50 px-4 py-2 rounded-md">
-            T
-          </span>
-          <span className="font-semibold tracking-wider">Talk Edge</span>
-        </Link>
-      </div>
+    <nav className="flex sticky items-center justify-between bg-zinc-200/50 dark:bg-zinc-700/50 p-2 rounded-md">
+      <Link href={"/"} className="flex items-center gap-2">
+        <span className="bg-blue-500/80 font-semibold text-zinc-50 px-4 py-2 rounded-md">
+          T
+        </span>
+        <span className="font-semibold tracking-wider">Talk Edge</span>
+      </Link>
 
-      <ol
-        className={cn("", {
-          ["flex items-center gap-3"]: orientation === "topbar",
-          [""]: orientation === "sidebar",
-        })}
-      >
-        {urlLinks.map((url, idx) => (
-          <li key={idx}>
-            <Link
-              href={`/${url.toLowerCase()}`}
-              className="font-medium tracking-wider text-sm capitalize hover:underline"
+      <ToggleMenu />
+
+      <ol className="hidden md:flex md:gap-2 md:items-center">
+        {UrlLinks.map((url, idx) => {
+          if (url.urlName.toLowerCase() === "login" && !!session) {
+            return <LogoutButton key={idx} />;
+          }
+
+          return (
+            <li
+              key={idx}
+              className="text-md hover:underline hover:cursor-pointer font-semibold dark:font-normal"
             >
-              {url}
-            </Link>
-          </li>
-        ))}
-        {orientation === "topbar" && <LogoutButton />}
-        {orientation === "topbar" && <ToggleTheme />}
+              <Link href={url.urlPath}>{url.urlName}</Link>
+            </li>
+          );
+        })}
+        <ToggleTheme />
       </ol>
     </nav>
   );
