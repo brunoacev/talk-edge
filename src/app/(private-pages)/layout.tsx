@@ -26,7 +26,7 @@ export default async function RootLayout({
     return (
       <html lang="en">
         <body
-          className={`${nunito.className} scroll-smooth antialiased w-full h-screen p-2 flex flex-col bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-50`}
+          className={`${nunito.className} scroll-smooth antialiased w-full h-screen p-2 flex flex-col gap-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-50`}
         >
           <ThemeProvider
             attribute="class"
@@ -35,7 +35,10 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Navigation orientation="topbar" />
-            {children}
+            <div className="flex w-full h-full gap-2">
+              <Navigation orientation="sidebar" />
+              {children}
+            </div>
           </ThemeProvider>
         </body>
       </html>

@@ -11,4 +11,19 @@ const UrlLinks: UrlLinksType[] = [
   },
 ];
 
-export { UrlLinks, type UrlLinksType };
+const WorkspaceLinks: UrlLinksType[] = [
+  {
+    urlName: "Sistema",
+    urlPath: "/workspace",
+  },
+  {
+    urlName: "Pesquisar",
+    urlPath: "/workspace",
+  },
+  {
+    urlName: "Detalhes",
+    urlPath: "/workspace",
+  },
+];
+
+export { UrlLinks, WorkspaceLinks, type UrlLinksType };
