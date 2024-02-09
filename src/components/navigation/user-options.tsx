@@ -20,8 +20,11 @@ export const UserOptions = () => {
 
       {!!isOpen && (
         <div className="absolute bottom-16 flex flex-col items-center gap-4 py-4 bg-zinc-50/50 dark:bg-zinc-700 px-1  w-full rounded-md">
-          <span className="bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-blue-500 hover:cursor-pointer w-full text-center p-1 rounded-sm transition-all duration-300 ease-in-out">
-            Teste
+          <span className="bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-blue-500 hover:cursor-pointer w-full text-center text-xs p-1 rounded-sm transition-all duration-300 ease-in-out">
+            Alterar Senha
+          </span>
+          <span className="bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-blue-500 hover:cursor-pointer w-full text-center text-xs p-1 rounded-sm transition-all duration-300 ease-in-out">
+            Outra Opção
           </span>
         </div>
       )}
