@@ -5,15 +5,26 @@ import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 
 export const ToggleTheme = () => {
+  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
   const { setTheme, theme } = useTheme();
 
-  return theme !== "dark" ? (
-    <button className="px-2 py-1 rounded-sm bg-zinc-50 dark:bg-zinc-700">
-      <Moon width={17} onClick={() => setTheme("dark")} />
-    </button>
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  return theme !== "dark" && hasMounted ? (
+    <div
+      onClick={() => setTheme("dark")}
+      className="px-2 py-1 rounded-sm bg-zinc-50 dark:bg-zinc-700"
+    >
+      <Moon size={17} />
+    </div>
   ) : (
-    <button className="px-2 py-1 rounded-sm bg-zinc-50 dark:bg-zinc-700">
-      <Sun width={17} onClick={() => setTheme("light")} />
-    </button>
+    <div
+      onClick={() => setTheme("light")}
+      className="px-2 py-1 rounded-sm bg-zinc-50 dark:bg-zinc-700"
+    >
+      <Sun size={17} />
+    </div>
   );
 };

@@ -1,18 +1,11 @@
-import { logout } from "@/lib/session";
-import { redirect } from "next/navigation";
+import { logoutAccountAction } from "@/actions/logout-account";
 
-export const LogoutForm = () => {
+export default function Logout() {
   return (
-    <section>
-      <form
-        action={async (formData: FormData) => {
-          "use server";
-          await logout();
-          redirect("/");
-        }}
-      >
-        <button type="submit">Sair</button>
-      </form>
-    </section>
+    <form action={logoutAccountAction}>
+      <button type="submit" className="w-fit">
+        Sair
+      </button>
+    </form>
   );
-};
+}

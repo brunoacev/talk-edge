@@ -1,13 +1,18 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ToggleTheme } from "../toggle-theme";
+import { getSession } from "@/lib/session";
+
+import { LogoutButton } from "../base-ui/logout-button";
 
 interface Navigation {
   urlLinks: string[];
   orientation: "topbar" | "sidebar";
 }
 
-export const Navigation = ({ urlLinks, orientation }: Navigation) => {
+export const Navigation = async ({ urlLinks, orientation }: Navigation) => {
+  const session = await getSession();
+
   return (
     <nav
       className={cn("w-full h-fit bg-zinc-50 dark:bg-zinc-900/50", {
@@ -47,7 +52,8 @@ export const Navigation = ({ urlLinks, orientation }: Navigation) => {
             </Link>
           </li>
         ))}
-        {/* {orientation === "topbar" && <ToggleTheme />} */}
+        {orientation === "topbar" && <LogoutButton />}
+        {orientation === "topbar" && <ToggleTheme />}
       </ol>
     </nav>
   );
