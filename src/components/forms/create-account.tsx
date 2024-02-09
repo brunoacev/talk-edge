@@ -1,16 +1,12 @@
-import { createAccount } from "@/lib/session";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { createAccountAction } from "@/actions/create-account";
+import { SubmitButton } from "../base-ui/submit-button";
 
 export const CreateAccountForm = () => {
   return (
     <section className="w-full h-full flex items-center justify-center">
       <form
-        action={async (formData: FormData) => {
-          "use server";
-          await createAccount(formData);
-          redirect("/projeto");
-        }}
+        action={createAccountAction}
         className="bg-zinc-50 dark:bg-zinc-950/50 px-4 py-6 rounded-md shadow-md flex flex-col gap-4 w-full max-w-md items-start"
       >
         <div className="flex flex-col gap-2">
@@ -63,12 +59,7 @@ export const CreateAccountForm = () => {
           </Link>
         </div>
 
-        <button
-          type="submit"
-          className="px-4 py-2 bg-zinc-200/50 hover:bg-zinc-200 dark:bg-zinc-50/80 font-semibold dark:text-zinc-950 w-full rounded-md dark:hover:bg-zinc-50 transition-all duration-300 ease-in-out"
-        >
-          Criar
-        </button>
+        <SubmitButton>Criar</SubmitButton>
       </form>
     </section>
   );
