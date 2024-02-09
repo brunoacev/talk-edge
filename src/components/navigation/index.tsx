@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { getSession } from "@/lib/session";
 import { ToggleMenu } from "./toggle-menu";
 import { UrlLinks } from "./data/links";
@@ -24,7 +23,7 @@ export const Navigation = async ({ orientation }: Navigation) => {
 
       <ToggleMenu />
 
-      <ol className="hidden md:flex md:gap-2 md:items-center">
+      <ol className="hidden md:flex md:gap-4 md:items-center">
         {UrlLinks.map((url, idx) => {
           if (url.urlName.toLowerCase() === "login" && !!session) {
             return <LogoutButton key={idx} />;

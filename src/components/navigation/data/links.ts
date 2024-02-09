@@ -6,10 +6,6 @@ interface UrlLinksType {
 
 const UrlLinks: UrlLinksType[] = [
   {
-    urlName: "Projeto",
-    urlPath: "/project",
-  },
-  {
     urlName: "Login",
     urlPath: "/login-account",
   },
