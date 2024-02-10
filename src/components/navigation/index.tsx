@@ -54,7 +54,7 @@ export const Navigation = async ({ orientation }: Navigation) => {
                 key={idx}
                 className="hover:cursor-pointer p-2 text-center font-semibold text-sm tracking-wide bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-blue-500 rounded-md transition-all duration-300 ease-in-out"
               >
-                {url.urlName}
+                <Link href={url.urlPath}>{url.urlName}</Link>
               </li>
             );
           })}

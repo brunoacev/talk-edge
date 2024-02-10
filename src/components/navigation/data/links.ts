@@ -1,6 +1,7 @@
 interface UrlLinksType {
   urlName: string;
   urlPath: string;
+  slug?: string;
   query?: {};
 }
 
@@ -14,15 +15,13 @@ const UrlLinks: UrlLinksType[] = [
 const WorkspaceLinks: UrlLinksType[] = [
   {
     urlName: "Sistema",
-    urlPath: "/workspace",
+    urlPath: "/workspace/system",
+    slug: "system",
   },
   {
     urlName: "Pesquisar",
-    urlPath: "/workspace",
-  },
-  {
-    urlName: "Detalhes",
-    urlPath: "/workspace",
+    urlPath: "/workspace/search",
+    slug: "search",
   },
 ];
 
