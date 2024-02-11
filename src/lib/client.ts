@@ -1,4 +1,4 @@
-type Bills = {
+export type ClientBillsType = {
   id: string;
   originalValue: number;
   updateValue: number;
@@ -7,7 +7,7 @@ type Bills = {
   status: "Pago" | "Aberto" | "Processando";
 };
 
-type History = {
+export type ClientHistoryType = {
   id: string;
   operator: string;
   description: string;
@@ -23,7 +23,7 @@ type Address = {
   state: string;
 };
 
-export interface Client {
+export interface IClient {
   id: string;
 
   fullname: string;
@@ -33,24 +33,24 @@ export interface Client {
 
   address: Address;
 
-  bills?: Bills[];
-  history?: History[];
+  bills?: ClientBillsType[];
+  history?: ClientHistoryType[];
 }
 
-const ClientDB: Client[] = [
+const ClientDB: IClient[] = [
   {
     id: "00001",
-    fullname: "Bruno Teste 01",
+    fullname: "Bruno Azevedo Moraes",
     identificator: "000.000.000-99",
     phone: "(99) 99999-8888",
-    clientRegister: "0005-6999-FF4",
+    clientRegister: "6999-FF4",
 
     address: {
-      street: "Teste",
-      housenumber: "50 A",
-      neighborhood: " Teste 01",
-      city: "Teste 01",
-      state: "Teste 01",
+      street: "Porto dos Sonhos",
+      housenumber: "50",
+      neighborhood: "Aldeota",
+      city: "Fortaleza",
+      state: "Ceará",
     },
 
     bills: [
@@ -152,6 +152,6 @@ const ClientDB: Client[] = [
   },
 ];
 
-export function getClient(): Client[] {
+export function getClient(): IClient[] {
   return ClientDB;
 }

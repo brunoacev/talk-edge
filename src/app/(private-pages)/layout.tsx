@@ -5,6 +5,7 @@ import { Navigation } from "@/components/navigation";
 import { ThemeProvider } from "@/providers/theme";
 import { getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
+import { UserProvider } from "@/context/user-context";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -34,11 +35,13 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Navigation orientation="topbar" />
-            <div className="flex w-full h-full gap-2">
-              <Navigation orientation="sidebar" />
-              {children}
-            </div>
+            <UserProvider>
+              <Navigation orientation="topbar" />
+              <div className="hidden md:flex w-full h-full gap-2">
+                <Navigation orientation="sidebar" />
+                {children}
+              </div>
+            </UserProvider>
           </ThemeProvider>
         </body>
       </html>

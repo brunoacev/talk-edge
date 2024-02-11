@@ -4,7 +4,7 @@ import * as React from "react";
 
 type Options = "bills" | "history" | "chat" | "finish";
 
-interface Client {
+interface System {
   option: Options;
   handleBills: () => void;
   handleHistory: () => void;
@@ -12,7 +12,7 @@ interface Client {
   handleFinish: () => void;
 }
 
-const ClientContext = React.createContext<Client>({
+const SystemContext = React.createContext<System>({
   option: "bills",
   handleBills: () => {},
   handleHistory: () => {},
@@ -20,7 +20,7 @@ const ClientContext = React.createContext<Client>({
   handleFinish: () => {},
 });
 
-function ClientProvider({ children }: { children: React.ReactNode }) {
+function SystemProvider({ children }: { children: React.ReactNode }) {
   const [option, setOption] = React.useState<Options>("bills");
 
   const handleBills = () => {
@@ -40,12 +40,12 @@ function ClientProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <ClientContext.Provider
+    <SystemContext.Provider
       value={{ option, handleBills, handleChat, handleFinish, handleHistory }}
     >
       {children}
-    </ClientContext.Provider>
+    </SystemContext.Provider>
   );
 }
 
-export { ClientProvider, ClientContext };
+export { SystemProvider, SystemContext };

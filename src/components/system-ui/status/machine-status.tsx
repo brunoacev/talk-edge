@@ -1,19 +1,19 @@
 import { Ping } from "./ping";
 
-export const Signals = () => {
+export const MachineStatus = () => {
   return (
     <div className="flex gap-4">
       <div className="flex items-center gap-2">
         <span className="text-sm font-semibold">Internet</span>
-        <Ping color="red" pulse />
+        <Ping sucess pulse />
       </div>
       <div className="flex items-center gap-2">
         <span className="text-sm font-semibold">Headset</span>
-        <Ping color="green" />
+        <Ping alert pulse />
       </div>
       <div className="flex items-center gap-2">
         <span className="text-sm font-semibold">Sistema</span>
-        <Ping color="green" />
+        <Ping sucess pulse />
       </div>
     </div>
   );
