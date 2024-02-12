@@ -1,8 +1,15 @@
-import { MonitorDot, Search } from "lucide-react";
+import {
+  Boxes,
+  MonitorDot,
+  Newspaper,
+  NotebookPen,
+  Search,
+} from "lucide-react";
 
 interface UrlLinksType {
   urlName: string;
   urlPath: string;
+  group?: "forYou" | "System";
   icon?: React.ReactNode;
   slug?: string;
   query?: {};
@@ -20,13 +27,36 @@ const WorkspaceLinks: UrlLinksType[] = [
     urlName: "Sistema",
     urlPath: "/workspace/system",
     slug: "system",
+    group: "System",
     icon: <MonitorDot size={17} />,
   },
   {
     urlName: "Pesquisar",
     urlPath: "/workspace/search",
     slug: "search",
+    group: "System",
     icon: <Search size={17} />,
+  },
+  {
+    urlName: "Grupos",
+    urlPath: "/workspace",
+    slug: "group",
+    group: "forYou",
+    icon: <Boxes size={17} />,
+  },
+  {
+    urlName: "Novidades",
+    urlPath: "/workspace",
+    slug: "news",
+    group: "forYou",
+    icon: <Newspaper size={17} />,
+  },
+  {
+    urlName: "Cursos",
+    urlPath: "/workspace",
+    slug: "test",
+    group: "forYou",
+    icon: <NotebookPen size={17} />,
   },
 ];
 
