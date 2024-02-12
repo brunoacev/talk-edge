@@ -9,7 +9,7 @@ export const EndService = () => {
           <textarea
             name="description"
             id="description"
-            className="w-full h-full rounded-md dark:bg-zinc-700"
+            className="w-full h-full max-h-[80%] rounded-md dark:bg-zinc-700"
           />
         </div>
         <div className="flex items-center gap-4 w-full">
