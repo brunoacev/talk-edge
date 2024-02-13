@@ -24,7 +24,7 @@ export const ChatMessage = ({
             <span>{date}</span>
             <span>{name}</span>
           </div>
-          <p className="p-2 text-sm rounded-md dark:bg-blue-400 tracking-wide">
+          <p className="p-2 text-sm rounded-md dark:bg-blue-400/20 bg-zinc-300 tracking-wide">
             {message}
           </p>
         </div>
@@ -54,7 +54,7 @@ export const ChatMessage = ({
             <span>{name}</span>
             <span>{date}</span>
           </div>
-          <p className="p-2 text-sm rounded-md dark:bg-blue-400/20 tracking-wide">
+          <p className="p-2 text-sm rounded-md dark:bg-blue-400/20 bg-zinc-300 tracking-wide">
             {message}
           </p>
         </div>

@@ -15,14 +15,14 @@ export const ToggleTheme = () => {
   return theme !== "dark" && hasMounted ? (
     <div
       onClick={() => setTheme("dark")}
-      className="px-2 py-1 rounded-sm bg-zinc-50 dark:bg-zinc-700 hover:cursor-pointer"
+      className="px-2 py-1 rounded-sm bg-zinc-200 dark:bg-zinc-700 hover:cursor-pointer"
     >
       <Moon size={17} />
     </div>
   ) : (
     <div
       onClick={() => setTheme("light")}
-      className="px-2 py-1 rounded-sm bg-zinc-50 dark:bg-zinc-700 hover:cursor-pointer"
+      className="px-2 py-1 rounded-sm bg-zinc-200 dark:bg-zinc-700 hover:cursor-pointer"
     >
       <Sun size={17} />
     </div>

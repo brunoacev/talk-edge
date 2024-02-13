@@ -15,7 +15,7 @@ export const UserOptions = () => {
     <div className="relative w-full">
       <div
         onClick={handleClick}
-        className="w-ffull h-fit bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-600 p-2 rounded-md flex items-center justify-center hover:cursor-pointer transition-all duration-300 ease-in-out"
+        className="w-ffull h-fit bg-zinc-50/80 hover:bg-white dark:bg-zinc-700 dark:hover:bg-zinc-600 p-2 rounded-md flex items-center justify-center hover:cursor-pointer transition-all duration-300 ease-in-out"
       >
         <User2 size={20} />
       </div>

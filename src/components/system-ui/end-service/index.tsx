@@ -9,14 +9,14 @@ export const EndService = () => {
           <textarea
             name="description"
             id="description"
-            className="w-full h-full max-h-[80%] rounded-md dark:bg-zinc-700"
+            className="w-full h-full max-h-[80%] rounded-md dark:bg-zinc-700 bg-zinc-300/20"
           />
         </div>
         <div className="flex items-center gap-4 w-full">
           <select
             id="option"
             required
-            className="border w-full max-w-xs dark:border-zinc-600 text-gray-900 hover:cursor-pointer text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-zinc-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="border w-full max-w-xs dark:border-zinc-600 bg-zinc-300/20 hover:bg-zinc-300 text-gray-900 hover:cursor-pointer text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-zinc-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             <option selected>Selecione uma opção</option>
             <option value="US">Acordo avista</option>
@@ -25,7 +25,7 @@ export const EndService = () => {
             <option value="DE">Desconhece o titular</option>
             <option value="DE">Recado</option>
           </select>
-          <button className="border dark:border-zinc-600 p-2.5 rounded-md w-full dark:bg-zinc-700 hover:dark:bg-zinc-600 transition-all duration-300 ease-in-out">
+          <button className="border dark:border-zinc-600 p-2.5 rounded-md w-full dark:bg-zinc-700 bg-zinc-300/20 hover:bg-zinc-300 hover:dark:bg-zinc-600 transition-all duration-300 ease-in-out">
             Encerrar Atendimento
           </button>
         </div>
@@ -34,18 +34,18 @@ export const EndService = () => {
         <span className="font-semibold tracking-wide">
           Detalhamento do seu atendimento
         </span>
-        <div className="flex flex-col gap-1 border-2 dark:border-zinc-600 rounded-md p-2">
+        <div className="flex flex-col gap-1 border-2 dark:border-zinc-600 bg-zinc-300/20 rounded-md p-2">
           <span>Operador:</span>
           <span>brunoacev</span>
         </div>
-        <div className="flex flex-col gap-1 border-2 dark:border-zinc-600 rounded-md p-2">
+        <div className="flex flex-col gap-1 border-2 dark:border-zinc-600 bg-zinc-300/20 rounded-md p-2">
           <span>Descrição:</span>
           <span>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus,
             quo?
           </span>
         </div>
-        <div className="flex flex-col gap-1 border-2 dark:border-zinc-600 rounded-md p-2">
+        <div className="flex flex-col gap-1 border-2 dark:border-zinc-600 bg-zinc-300/20 rounded-md p-2">
           <span>Tipo:</span>
           <span>Acordo Parcelado</span>
         </div>

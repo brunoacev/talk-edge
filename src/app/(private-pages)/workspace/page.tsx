@@ -6,11 +6,6 @@ export default function WorkspacePage() {
         <p className="tracking-wide">
           Conteúdo reservado para algo informativo.
         </p>
-        <p className="tracking-wide">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-          nesciunt corrupti ratione consequuntur harum possimus, non, voluptate
-          officiis voluptatem amet consequatur deleniti rerum quo rem.
-        </p>
       </section>
 
       <h2 className="font-semibold tracking-wide text-lg text-center md:hidden">

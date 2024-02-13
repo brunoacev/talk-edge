@@ -32,7 +32,8 @@ export const TableMenuOptions = () => {
             className={cn(
               "p-2 font-semibold text-sm tracking-wide capitalize border-2 rounded-md dark:border-zinc-600 hover:rounded-md hover:cursor-pointer dark:hover:bg-zinc-600/50 transition-all duration-300 ease-in-out",
               {
-                ["dark:bg-zinc-600/50 rounded-md"]: option === item.title,
+                ["dark:bg-zinc-600/50 bg-zinc-300 rounded-md"]:
+                  option === item.title,
               }
             )}
           >

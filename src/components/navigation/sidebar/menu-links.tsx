@@ -21,7 +21,7 @@ export const MenuLinks = () => {
                   className={cn(
                     "flex items-start gap-2 hover:cursor-pointer list-none p-2 font-semibold text-sm tracking-wide dark:hover:bg-zinc-600/50 rounded-md",
                     {
-                      ["dark:bg-zinc-600/50"]:
+                      ["dark:bg-zinc-600/50 bg-zinc-300"]:
                         url.slug?.toLowerCase() === pathname,
                     }
                   )}
@@ -46,7 +46,7 @@ export const MenuLinks = () => {
                   className={cn(
                     "flex items-start gap-2 hover:cursor-pointer list-none p-2 font-semibold text-sm tracking-wide dark:hover:bg-zinc-600/50 rounded-md",
                     {
-                      ["dark:bg-zinc-600/50"]:
+                      ["dark:bg-zinc-600/50 bg-zinc-300"]:
                         url.slug?.toLowerCase() === pathname,
                     }
                   )}

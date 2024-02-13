@@ -8,7 +8,7 @@ export default async function Home() {
       </h1>
 
       <div className=" flex items-center gap-1 flex-wrap">
-        <span> Para acesso a plataforma, faça login acesse esse </span>
+        <span> Para acesso a plataforma, faça login acessando esse </span>
         <Link
           href={"/login-account"}
           className="underline hover:cursor-pointer"
