@@ -5,6 +5,7 @@ import { Navigation } from "@/components/navigation";
 import { ThemeProvider } from "@/providers/theme";
 import { getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
+import { Footer } from "@/components/footer";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default async function RootLayout({
             <Navigation orientation="topbar" />
             {children}
           </ThemeProvider>
+          <Footer />
         </body>
       </html>
     );

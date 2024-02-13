@@ -8,13 +8,12 @@ export default async function Home() {
       </h1>
 
       <div className=" flex items-center gap-1 flex-wrap">
-        <span> Mais sobre o desenvolvedor, acesse:</span>
+        <span> Para acesso a plataforma, faça login acesse esse </span>
         <Link
-          href={"https://brunoacev-dev.vercel.app/"}
-          target="_blank"
+          href={"/login-account"}
           className="underline hover:cursor-pointer"
         >
-          brunoacev.com
+          link
         </Link>
       </div>
     </main>

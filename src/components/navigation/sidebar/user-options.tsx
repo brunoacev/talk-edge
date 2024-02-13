@@ -5,7 +5,7 @@ import { User2 } from "lucide-react";
 import { UserContext } from "@/context/user-context";
 
 export const UserOptions = () => {
-  const { name, handleRole, role } = React.useContext(UserContext);
+  const { handleRole } = React.useContext(UserContext);
 
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
@@ -33,8 +33,8 @@ export const UserOptions = () => {
           >
             Alterar Role
           </span>
-          <span className="w-full text-xs p-2 rounded-sm transition-all duration-300 ease-in-out">
-            {name}
+          <span className="bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-blue-500 hover:cursor-pointer w-full  text-xs p-2 rounded-sm transition-all duration-300 ease-in-out">
+            Sair
           </span>
         </div>
       )}
