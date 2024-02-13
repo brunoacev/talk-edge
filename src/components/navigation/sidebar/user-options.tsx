@@ -3,6 +3,7 @@
 import * as React from "react";
 import { User2 } from "lucide-react";
 import { UserContext } from "@/context/user-context";
+import { logoutAccountAction } from "@/actions/logout-account";
 
 export const UserOptions = () => {
   const { handleRole } = React.useContext(UserContext);
@@ -33,9 +34,14 @@ export const UserOptions = () => {
           >
             Alterar Role
           </span>
-          <span className="bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-blue-500 hover:cursor-pointer w-full  text-xs p-2 rounded-sm transition-all duration-300 ease-in-out">
-            Sair
-          </span>
+          <form action={logoutAccountAction} className="w-full">
+            <button
+              type="submit"
+              className="bg-zinc-50/50 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-blue-500 hover:cursor-pointer w-full  text-xs p-2 rounded-sm transition-all duration-300 ease-in-out"
+            >
+              Sair
+            </button>
+          </form>
         </div>
       )}
     </div>

@@ -20,23 +20,15 @@ export async function decrypt(input: string): Promise<any> {
   return payload;
 }
 
-export async function createAccount(formData: FormData) {
-  const user = {
-    email: formData.get("email"),
-    password: formData.get("password"),
-  };
-
-  return;
-}
-
 export async function login(formData: FormData) {
-  const user = {
-    email: formData.get("email"),
-    password: formData.get("password"),
-  };
+  const username = formData.get("username")?.toString().trim();
+
+  if (username !== process.env.secretUser) {
+    return;
+  }
 
   const expires = new Date(Date.now() + 1000 * 1000);
-  const session = await encrypt({ user, expires });
+  const session = await encrypt({ username, expires });
 
   cookies().set("session", session, { expires, httpOnly: true });
 }

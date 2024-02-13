@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SubmitButton } from "../base-ui/submit-button";
 import { Input } from "../base-ui/input";
 import { Label } from "../base-ui/label";
@@ -14,35 +13,18 @@ export const LoginAccountForm = () => {
           Faça login na sua conta!
         </h2>
         <p className="text-xs tracking-wide">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque vel
-          ipsa temporibus error deleniti esse commodi mollitia, eveniet porro
-          sapiente.
+          Durante o periodo de demonstração, utilize{" "}
+          <span className="underline">demo@demo</span> como usuário.
         </p>
       </Box>
       <Box>
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="username">Usuário</Label>
         <Input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="email@email.com"
+          type="text"
+          id="username"
+          name="username"
+          placeholder="demo@demo"
         />
-      </Box>
-      <Box>
-        <Label htmlFor="password">Senha</Label>
-        <Input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="********"
-        />
-      </Box>
-
-      <Box className="flex-row items-center">
-        <span>Não possui uma conta?</span>
-        <Link href={"/create-account"} className="underline tracking-wide">
-          Crie agora!
-        </Link>
       </Box>
 
       <SubmitButton>Login</SubmitButton>

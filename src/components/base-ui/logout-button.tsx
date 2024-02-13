@@ -10,7 +10,6 @@ export const LogoutButton = async () => {
   return (
     <form
       action={async () => {
-        "use server";
         await logout();
         redirect("/login-account");
       }}
