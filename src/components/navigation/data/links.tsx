@@ -31,13 +31,6 @@ const WorkspaceLinks: UrlLinksType[] = [
     icon: <MonitorDot size={17} />,
   },
   {
-    urlName: "Pesquisar",
-    urlPath: "/workspace/search",
-    slug: "search",
-    group: "System",
-    icon: <Search size={17} />,
-  },
-  {
     urlName: "Grupos",
     urlPath: "/workspace",
     slug: "group",
