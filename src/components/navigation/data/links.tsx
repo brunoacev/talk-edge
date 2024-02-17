@@ -1,10 +1,4 @@
-import {
-  Boxes,
-  MonitorDot,
-  Newspaper,
-  NotebookPen,
-  Search,
-} from "lucide-react";
+import { Boxes, MonitorDot, Newspaper, NotebookPen } from "lucide-react";
 
 interface UrlLinksType {
   urlName: string;
