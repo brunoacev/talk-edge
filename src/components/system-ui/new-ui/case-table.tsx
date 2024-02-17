@@ -9,11 +9,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-type DataTable = {
-  data: string[];
+type Bills = {
+  id: string;
+  value: number;
+  valueAt: number;
+  dueDate: string;
+  status: string;
 };
 
-export const CaseTable = ({ data }: DataTable) => {
+export const CaseTable = ({ data }: { data: Bills[] }) => {
+  let initialValue = 0;
+  data.map((value, idx) => (initialValue += value.valueAt));
+
   return (
     <Table>
       <TableCaption>
@@ -30,25 +37,25 @@ export const CaseTable = ({ data }: DataTable) => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((content, idx) => (
+        {data.map((bill, idx) => (
           <TableRow key={idx}>
-            <TableCell className="w-[100px] uppercase">{"0000-00"}</TableCell>
-            <TableCell className="w-[100px]">R$ {"150.35"}</TableCell>
-            <TableCell className="w-[100px]">R$ {"200.50"}</TableCell>
-            <TableCell className="w-[100px]">{"10/05/2023"}</TableCell>
+            <TableCell className="w-[100px] uppercase">{bill.id}</TableCell>
+            <TableCell className="w-[100px]">R$ {bill.value}</TableCell>
+            <TableCell className="w-[100px]">R$ {bill.valueAt}</TableCell>
+            <TableCell className="w-[100px]">{bill.dueDate}</TableCell>
             <TableCell className="text-end">
               <button className="border dark:border-green-800 font-semibold tracking-wider hover:bg-zinc-50 dark:text-zinc-50 px-6 py-1.5 rounded-md dark:hover:bg-green-500 transition-all duration-300 ease-in-out">
                 Emitir
               </button>
             </TableCell>
-            <TableCell className="w-[100px] text-end">{"Aberto"}</TableCell>
+            <TableCell className="w-[100px] text-end">{bill.status}</TableCell>
           </TableRow>
         ))}
       </TableBody>
       <TableFooter>
         <TableRow>
           <TableCell colSpan={5}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
+          <TableCell className="text-right">R$ {initialValue}</TableCell>
         </TableRow>
       </TableFooter>
     </Table>

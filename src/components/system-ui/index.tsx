@@ -8,6 +8,7 @@ import { CaseClient } from "./new-ui/case-client";
 import { CaseHistory } from "./new-ui/case-history";
 import { SystemChat } from "./chat";
 import { EndService } from "./end-service";
+import { getClient } from "@/lib/getClient";
 
 type Case = "cliente" | "faturas" | "historico" | "chat" | "encerrar";
 
@@ -18,36 +19,7 @@ export const SystemUI = () => {
     setStateCase(e);
   };
 
-  const dataBills = ["01", "02", "03"];
-  const dataClient = {
-    fullname: "Bruno Azevedo Moraes",
-    id: "999.999.999-08",
-    phone: "(85) 99999-8888",
-    register: "FFFDDD-GGG05",
-  };
-  const dataHistory = [
-    {
-      operatorID: "Bruno Azevedo",
-      title: "Promessa Pagamento",
-      description:
-        "Cliente confirma pagamento da fatura 10/05 para o dia 10/06/2022",
-      date: "20/05/2022 - 14:35",
-    },
-    {
-      operatorID: "Bruno Azevedo",
-      title: "Promessa Pagamento",
-      description:
-        "Cliente confirma pagamento da fatura 10/05 para o dia 10/06/2022",
-      date: "20/05/2022 - 14:35",
-    },
-    {
-      operatorID: "Bruno Azevedo",
-      title: "Promessa Pagamento",
-      description:
-        "Cliente confirma pagamento da fatura 10/05 para o dia 10/06/2022",
-      date: "20/05/2022 - 14:35",
-    },
-  ];
+  const { client, bills, history } = getClient();
 
   return (
     <section className="flex flex-col gap-2 h-full w-full">
@@ -80,9 +52,9 @@ export const SystemUI = () => {
       </div>
 
       <div className="p-4 bg-zinc-200/50 dark:bg-zinc-700/50 w-full md:h-[420px] lg:h-[700px] rounded-md overflow-y-auto">
-        {stateCase === "faturas" && <CaseTable data={dataBills} />}
-        {stateCase === "cliente" && <CaseClient data={dataClient} />}
-        {stateCase === "historico" && <CaseHistory data={dataHistory} />}
+        {stateCase === "cliente" && <CaseClient data={client} />}
+        {stateCase === "faturas" && <CaseTable data={bills} />}
+        {stateCase === "historico" && <CaseHistory data={history} />}
         {stateCase === "chat" && <SystemChat />}
         {stateCase === "encerrar" && <EndService />}
       </div>
