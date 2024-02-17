@@ -1,4 +1,4 @@
-import { Ping } from "./ping";
+import { Ping } from "../system-ui/status/ping";
 
 export const MachineStatus = () => {
   return (
@@ -10,10 +10,6 @@ export const MachineStatus = () => {
       <div className="flex items-center gap-2">
         <span className="text-sm font-semibold">Headset</span>
         <Ping alert pulse />
-      </div>
-      <div className="flex items-center gap-2">
-        <span className="text-sm font-semibold">Sistema</span>
-        <Ping sucess pulse />
       </div>
     </div>
   );

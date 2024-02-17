@@ -1,4 +1,4 @@
-import { MachineStatus } from "./machine-status";
+import { MachineStatus } from "../../machine-status";
 
 export const Status = () => {
   return (
