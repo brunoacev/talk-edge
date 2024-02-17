@@ -9,10 +9,10 @@ export const InputMessage = () => {
         placeholder="Digite sua mensagem..."
       />
       <div className="flex gap-2 items-center">
-        <div className="bg-zinc-600/70 p-2 rounded-md hover:cursor-pointer dark:hover:bg-zinc-500/90 bg-zinc-300 transition-all duration-300 ease-in-out">
+        <div className="dark:bg-zinc-600/70 p-2 rounded-md hover:cursor-pointer dark:hover:bg-zinc-500/90 bg-zinc-300 transition-all duration-300 ease-in-out">
           <Paperclip size={17} />
         </div>
-        <div className="bg-zinc-600/70 p-2 rounded-md hover:cursor-pointer dark:hover:bg-zinc-500/90 bg-zinc-300 transition-all duration-300 ease-in-out">
+        <div className="dark:bg-zinc-600/70 p-2 rounded-md hover:cursor-pointer dark:hover:bg-zinc-500/90 bg-zinc-300 transition-all duration-300 ease-in-out">
           <Send size={17} />
         </div>
       </div>
