@@ -1,48 +1,28 @@
 "use client";
 
-import * as React from "react";
+import { ReactNode, useState, createContext } from "react";
 
-type Options = "bills" | "history" | "chat" | "finish";
+type Navigation = "cliente" | "faturas" | "historico" | "chat" | "encerrar";
 
-interface System {
-  option: Options;
-  handleBills: () => void;
-  handleHistory: () => void;
-  handleChat: () => void;
-  handleFinish: () => void;
+interface ISystemContext {
+  navOption: Navigation;
+  handleNav: (type: Navigation) => void;
 }
 
-const SystemContext = React.createContext<System>({
-  option: "bills",
-  handleBills: () => {},
-  handleHistory: () => {},
-  handleChat: () => {},
-  handleFinish: () => {},
+const SystemContext = createContext<ISystemContext>({
+  handleNav: () => {},
+  navOption: "cliente",
 });
 
-function SystemProvider({ children }: { children: React.ReactNode }) {
-  const [option, setOption] = React.useState<Options>("bills");
+function SystemProvider({ children }: { children: ReactNode }) {
+  const [navOption, setNavOption] = useState<Navigation>("cliente");
 
-  const handleBills = () => {
-    setOption("bills");
-  };
-
-  const handleHistory = () => {
-    setOption("history");
-  };
-
-  const handleChat = () => {
-    setOption("chat");
-  };
-
-  const handleFinish = () => {
-    setOption("finish");
+  const handleNav = (type: Navigation) => {
+    setNavOption(type);
   };
 
   return (
-    <SystemContext.Provider
-      value={{ option, handleBills, handleChat, handleFinish, handleHistory }}
-    >
+    <SystemContext.Provider value={{ handleNav, navOption }}>
       {children}
     </SystemContext.Provider>
   );
