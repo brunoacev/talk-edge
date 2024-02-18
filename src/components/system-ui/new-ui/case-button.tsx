@@ -11,9 +11,9 @@ export const CaseButton = ({ name, active, ...rest }: CaseButton) => {
     <button
       {...rest}
       className={cn(
-        "px-12 py-2 text-sm capitalize border dark:border-none hover:bg-zinc-50 dark:bg-zinc-400/20  rounded-md dark:text-zinc-400 dark:hover:bg-zinc-400/60 dark:hover:text-zinc-50 hover:cursor-pointer transition-all duration-300 ease-in-out",
+        "px-16 py-1.5 text-sm capitalize rounded-md text-gray-600 font-semibold dark:text-zinc-400 hover:underline hover:cursor-pointer transition-all duration-300 ease-in-out",
         {
-          ["font-semibold bg-zinc-50 dark:text-zinc-50 dark:bg-zinc-400/60"]:
+          ["font-semibold bg-zinc-100 dark:text-zinc-50 dark:bg-zinc-200/10 "]:
             active,
         }
       )}

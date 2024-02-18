@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ShowTable } from "./table";
 import { CaseButton } from "./new-ui/case-button";
 import { CaseTable } from "./new-ui/case-table";
 import { CaseClient } from "./new-ui/case-client";
@@ -23,7 +22,7 @@ export const SystemUI = () => {
 
   return (
     <section className="flex flex-col gap-2 h-full w-full">
-      <div className="p-4 bg-zinc-200/50 dark:bg-zinc-700/50 w-full h-fit rounded-md flex flex-wrap items-center gap-4 ">
+      <div className="p-2 bg-zinc-200/50 dark:bg-gray-400/10 w-full h-fit rounded-md flex flex-wrap items-center gap-4 ">
         <CaseButton
           name="cliente"
           onClick={() => handleCase("cliente")}
