@@ -1,4 +1,4 @@
-import { Ping } from "../system-ui/status/ping";
+import { Ping } from "./ping";
 
 export const MachineStatus = () => {
   return (

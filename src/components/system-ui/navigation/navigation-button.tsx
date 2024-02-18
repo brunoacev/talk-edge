@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes } from "react";
 
-interface CaseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface Button extends ButtonHTMLAttributes<HTMLButtonElement> {
   name: string;
   active?: boolean;
 }
 
-export const CaseButton = ({ name, active, ...rest }: CaseButton) => {
+export const NavigationButton = ({ name, active, ...rest }: Button) => {
   return (
     <button
       {...rest}

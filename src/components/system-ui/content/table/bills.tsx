@@ -17,9 +17,9 @@ type Bills = {
   status: string;
 };
 
-export const CaseTable = ({ data }: { data: Bills[] }) => {
+export const TableBills = ({ data }: { data: Bills[] }) => {
   let initialValue = 0;
-  data.map((value, idx) => (initialValue += value.valueAt));
+  data.map((value) => (initialValue += value.valueAt));
 
   return (
     <Table>

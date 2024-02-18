@@ -3,7 +3,6 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -16,7 +15,7 @@ type DataHistory = {
   date: string;
 };
 
-export const CaseHistory = ({ data }: { data: DataHistory[] }) => {
+export const TableHistory = ({ data }: { data: DataHistory[] }) => {
   return (
     <Table>
       <TableCaption>

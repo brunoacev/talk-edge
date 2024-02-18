@@ -22,7 +22,7 @@ type DataTable = {
   };
 };
 
-export const CaseClient = ({ data }: { data: DataTable }) => {
+export const TableClient = ({ data }: { data: DataTable }) => {
   return (
     <Table>
       <TableHeader>

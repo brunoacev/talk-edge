@@ -1,6 +1,6 @@
 import { Label } from "@/components/base-ui/label";
 
-export const EndService = () => {
+export const Finish = () => {
   return (
     <div className="h-full w-full p-2 grid grid-cols-2 gap-4 rounded-md border-2 dark:border-zinc-600">
       <div className="flex flex-col gap-2 w-full h-full">
